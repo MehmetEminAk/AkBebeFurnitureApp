@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uW7-uW-Nuq">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Ürünler-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vIk-kc-9B1">
+                                <rect key="frame" x="0.0" y="143" width="393" height="626"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ex7-9U-7Jw">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="e3R-Kb-202">
+                                <rect key="frame" x="14" y="69" width="365" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Bebek Odaları"/>
+                                    <segment title="Genç Odaları"/>
+                                    <segment title="Yatak Odaları"/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Ürünler" image="basket" catalog="system" id="FsW-nP-HID"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1794.6564885496182" y="-671.12676056338034"/>
+        </scene>
+        <!--Ürün Ekle-->
+        <scene sceneID="fR4-SL-B5E">
+            <objects>
+                <viewController id="gVM-q0-bWZ" customClass="SaveProductVC" customModule="MyApi" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="27f-I2-gL0">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="ylE-8e-Gxi">
+                                <rect key="frame" x="126" y="91.666666666666671" width="116" height="26"/>
+                            </pageControl>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QmC-i7-e4W">
+                                <rect key="frame" x="0.0" y="362.66666666666669" width="211" height="162.00000000000006"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="162" id="WRy-Xg-kql"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="gVM-q0-bWZ" id="Daa-zG-Vk4"/>
+                                    <outlet property="delegate" destination="gVM-q0-bWZ" id="JKz-Sh-Gkx"/>
+                                </connections>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JR3-Lq-wEi">
+                                <rect key="frame" x="107" y="595" width="178" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Kaydet">
+                                    <backgroundConfiguration key="background" cornerRadius="17">
+                                        <color key="backgroundColor" red="0.25474880579999998" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </backgroundConfiguration>
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="saveProductClicked:" destination="gVM-q0-bWZ" eventType="touchUpInside" id="79d-0G-vKL"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo.artframe" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="AZ8-N9-ROE">
+                                <rect key="frame" x="59" y="60.666666666666657" width="275" height="210"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Fiyat" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bci-l7-O8a">
+                                <rect key="frame" x="227" y="452" width="138" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ürün Adı" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RjP-xb-BDM">
+                                <rect key="frame" x="227" y="409" width="138" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="138" id="jCd-U7-1JQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ürün Kategorisi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="22L-up-u3S">
+                                <rect key="frame" x="16" y="295" width="171" height="45"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="06b-Pl-QDx"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="RjP-xb-BDM" firstAttribute="leading" secondItem="QmC-i7-e4W" secondAttribute="trailing" constant="16" id="1R2-UB-gJm"/>
+                            <constraint firstItem="Bci-l7-O8a" firstAttribute="centerY" secondItem="27f-I2-gL0" secondAttribute="centerY" constant="43" id="2Xc-11-zw7"/>
+                            <constraint firstItem="AZ8-N9-ROE" firstAttribute="leading" secondItem="06b-Pl-QDx" secondAttribute="leading" constant="59" id="7AX-hW-2MJ"/>
+                            <constraint firstItem="06b-Pl-QDx" firstAttribute="trailing" secondItem="22L-up-u3S" secondAttribute="trailing" constant="206" id="DzS-6s-wWv"/>
+                            <constraint firstItem="RjP-xb-BDM" firstAttribute="trailing" secondItem="Bci-l7-O8a" secondAttribute="trailing" id="E28-45-z8Q"/>
+                            <constraint firstItem="ylE-8e-Gxi" firstAttribute="leading" secondItem="06b-Pl-QDx" secondAttribute="leading" constant="126" id="K7D-VO-E9a"/>
+                            <constraint firstItem="AZ8-N9-ROE" firstAttribute="width" secondItem="27f-I2-gL0" secondAttribute="width" multiplier="0.7" id="S6x-Lo-L8L"/>
+                            <constraint firstItem="QmC-i7-e4W" firstAttribute="top" secondItem="22L-up-u3S" secondAttribute="bottom" constant="22.666666666666686" id="Wur-06-jf6"/>
+                            <constraint firstItem="ylE-8e-Gxi" firstAttribute="top" secondItem="06b-Pl-QDx" secondAttribute="top" constant="32.666666666666671" id="b2l-39-z8Z"/>
+                            <constraint firstItem="06b-Pl-QDx" firstAttribute="top" secondItem="AZ8-N9-ROE" secondAttribute="top" id="cwM-06-7PC"/>
+                            <constraint firstItem="Bci-l7-O8a" firstAttribute="top" secondItem="RjP-xb-BDM" secondAttribute="bottom" constant="9" id="d1G-0s-W2K"/>
+                            <constraint firstItem="JR3-Lq-wEi" firstAttribute="centerX" secondItem="AZ8-N9-ROE" secondAttribute="centerX" id="dmi-Gk-cvd"/>
+                            <constraint firstItem="JR3-Lq-wEi" firstAttribute="leading" secondItem="06b-Pl-QDx" secondAttribute="leading" constant="107" id="ed6-wh-sa3"/>
+                            <constraint firstItem="22L-up-u3S" firstAttribute="leading" secondItem="27f-I2-gL0" secondAttribute="leadingMargin" id="gFa-oe-g8M"/>
+                            <constraint firstItem="AZ8-N9-ROE" firstAttribute="height" secondItem="27f-I2-gL0" secondAttribute="height" multiplier="0.25" id="lg1-3N-fgE"/>
+                            <constraint firstItem="22L-up-u3S" firstAttribute="top" secondItem="AZ8-N9-ROE" secondAttribute="bottom" constant="23" id="mJ5-4Y-839"/>
+                            <constraint firstItem="QmC-i7-e4W" firstAttribute="top" secondItem="AZ8-N9-ROE" secondAttribute="bottom" constant="90.666666666666657" id="nCL-ub-AGj"/>
+                            <constraint firstItem="QmC-i7-e4W" firstAttribute="leading" secondItem="06b-Pl-QDx" secondAttribute="leading" id="p0g-HK-29D"/>
+                            <constraint firstItem="06b-Pl-QDx" firstAttribute="trailing" secondItem="RjP-xb-BDM" secondAttribute="trailing" constant="28" id="pGP-ik-BFJ"/>
+                            <constraint firstItem="06b-Pl-QDx" firstAttribute="bottom" secondItem="JR3-Lq-wEi" secondAttribute="bottom" constant="188" id="rHe-bA-B1h"/>
+                            <constraint firstItem="RjP-xb-BDM" firstAttribute="leading" secondItem="Bci-l7-O8a" secondAttribute="leading" id="tRR-u0-RmN"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Ürün Ekle" image="plus.circle" catalog="system" id="u7B-BO-5nz"/>
+                    <connections>
+                        <outlet property="categoriesPicker" destination="QmC-i7-e4W" id="SIJ-eY-zcG"/>
+                        <outlet property="chooseImage" destination="AZ8-N9-ROE" id="n5P-tF-tGa"/>
+                        <outlet property="nameTF" destination="RjP-xb-BDM" id="AoG-rZ-uVy"/>
+                        <outlet property="priceTF" destination="Bci-l7-O8a" id="KTd-At-v62"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zqK-nU-BWk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1795" y="-8"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="A57-fJ-ECv">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="uW7-uW-Nuq" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kJF-Ad-atJ">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="viewControllers" id="Xhh-qf-S5Q"/>
+                        <segue destination="gVM-q0-bWZ" kind="relationship" relationship="viewControllers" id="YMd-nk-Sof"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d2O-co-Tca" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="950" y="-325"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="basket" catalog="system" width="128" height="108"/>
+        <image name="photo.artframe" catalog="system" width="128" height="93"/>
+        <image name="plus.circle" catalog="system" width="128" height="123"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
